@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Closure</title>
+
+</head>
+<body>
+
+<script>
+/*
+var x= 2;  //Lexical Scope
+var addto = function(){
+	var nom = 2;
+  return x + nom;
+  }
+  //console.log(addto(3));
+    console.dir(addto);
+    */
+var addto1 = function(passed){
+
+    var addto2 = function(inner){
+    	return inner + passed;
+    }
+
+  return addto2;
+  }
+  // Closure are functions with preserve data
+  var addthree = new addto1(3);
+  var addfour = new addto1(4);
+
+   console.log(addthree(1));
+   console.log(addfour(1));
+  
+</script>
+</body>
+<html>
