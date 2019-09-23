@@ -32,6 +32,14 @@ cleanRoom().then(function(result){
 }).then(function(result){
 	console.log('finished ' + result);
 })
+
+Promise.all([cleanRoom(),removeGarbage(),winIcecream()]).then(function{
+  console.log('finished All');
+});
+
+Promise.race([cleanRoom(),removeGarbage(),winIcecream()]).then(function{
+  console.log('one finished');
+});
 </script>
 </body>
 <html>
